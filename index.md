@@ -1,14 +1,17 @@
 ---
 layout: default
 ---
-## Блог
+# Последние записи блога
 
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      <p><small>{{ post.date | date: "%d.%m.%Y" }}</small></p>
-      <p>{{ post.excerpt }}</p>
-    </li>
-  {% endfor %}
-</ul>
+{% assign recent_posts = site.posts | slice: 0, 10 %}
+
+{% for post in recent_posts %}
+## [{{ post.title }}]({{ post.url }})
+
+<small>{{ post.date | date: "%d.%m.%Y" }}</small>
+
+{{ post.excerpt }}
+
+{% endfor %}
+
+[Смотреть все записи]({{ site.baseurl }}/blog/)
