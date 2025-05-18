@@ -1,13 +1,14 @@
 ---
 layout: default
 ---
+## Блог
 
-# Blogs
-{% for post in site.posts %}
- 
 <ul>
- 
-<li><h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3></li>
- 
+  {% for post in site.posts %}
+    <li>
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <p><small>{{ post.date | date: "%d.%m.%Y" }}</small></p>
+      <p>{{ post.excerpt }}</p>
+    </li>
+  {% endfor %}
 </ul>
-{% endfor %}
