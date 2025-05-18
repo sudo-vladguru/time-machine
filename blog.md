@@ -17,4 +17,4 @@ permalink: /blog/
 
 {% endfor %}
 
-[назад](./index.html)
+[назад](../index.html)
